@@ -5,7 +5,7 @@ const { todosIncompleted, todosCompleted, toggle, deleteTodo } = todosFactory();
 
 <template>
   <h2>ToDo List</h2>
-
+  <h2>ToDo List</h2>
   <p v-if="todosIncompleted.length === 0">Nothing todo</p>
   <ul id="incomplete-tasks">
     <li
