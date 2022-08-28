@@ -1,6 +1,7 @@
 {
   "name": "vue-practice",
   "version": "0.0.0",
+  "homepage": "https://josequirosdev.github.io/CI-CDVue3/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
