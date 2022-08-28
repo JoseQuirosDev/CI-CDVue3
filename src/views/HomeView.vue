@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <h3>ToDo List</h3>
+  <h3>Todo List</h3>
   <p v-if="todosIncompleted.length === 0">Nothing todo</p>
   <ul id="incomplete-tasks">
     <li v-for="todo in todosIncompleted" :key="todo.id" @click="toggle(todo.id)">
