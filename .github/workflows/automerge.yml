@@ -35,7 +35,7 @@ jobs:
           token: ${{ secrets.CI }}
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
           merge-method: squash
-      - id: Auto approve
+      - id: Auto_approve
         name: Auto approve
         if: steps.cpr.outputs.pull-request-operation == 'created'
         uses: juliangruber/approve-pull-request-action@v1
