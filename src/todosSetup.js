@@ -27,9 +27,6 @@ const add = (name) => {
   //todos.value.push(newTodo);
 };
 
-const update = (todosPayload) => {
-  todos.value = todosPayload;
-};
 
 const todosFactory = () => ({todosIncompleted, todosCompleted, toggle, deleteTodo, add, update});
 
