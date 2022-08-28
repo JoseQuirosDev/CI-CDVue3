@@ -26,6 +26,7 @@ jobs:
         uses: "pascalgn/automerge-action@v0.15.3"
         env:
           GITHUB_TOKEN: "${{ secrets.CI }}"
+
           MERGE_LABELS: ""
       - id: enable
         name: Enable Pull Request Automerge
@@ -35,7 +36,7 @@ jobs:
           token: ${{ secrets.CI }}
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
           merge-method: squash
-      - id: Auto approve
+      - id: Auto_approve
         name: Auto approve
         if: steps.cpr.outputs.pull-request-operation == 'created'
         uses: juliangruber/approve-pull-request-action@v1
@@ -43,5 +44,3 @@ jobs:
           github-token: ${{ secrets.CI }}
           number: ${{ steps.cpr.outputs.pull-request-number }}
           
-          
-
