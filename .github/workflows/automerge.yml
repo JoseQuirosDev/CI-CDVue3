@@ -26,6 +26,7 @@ jobs:
         uses: "pascalgn/automerge-action@v0.15.3"
         env:
           GITHUB_TOKEN: "${{ secrets.CI }}"
+          MERGE_LABELS: ""
       - id: enable
         name: Enable Pull Request Automerge
         if: steps.cpr.outputs.pull-request-operation == 'created'
