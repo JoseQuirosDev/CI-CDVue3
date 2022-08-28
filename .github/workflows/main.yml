@@ -1,15 +1,21 @@
-name: Pull Request on Branch Push
+name: Staging Auto-PR
 on:
-   push:
-    branches:
-      - develop
+  push:
+    branches: ['develop']
+
 jobs:
-  auto-pull-request:
-    name: PullRequestAction
+  pull-request:
+    name: Open PR to main
     runs-on: ubuntu-latest
     steps:
-      - name: pull-request-action
-        uses: vsoch/pull-request-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.CI }}
-          PULL_REQUEST_BRANCH: "master"
+    - uses: actions/checkout@v2
+      name: checkout
+
+    - uses: repo-sync/pull-request@v2
+      name: pull-request
+      with:
+        destination_branch: "main"
+        pr_title: "Pulling ${{ github.ref }} into main"
+        pr_body: "👑 *An automated PR*"
+        pr_draft: true
+        github_token: ${{ secrets.GITHUB_TOKEN }}
