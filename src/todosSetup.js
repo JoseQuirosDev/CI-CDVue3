@@ -28,7 +28,7 @@ const add = (name) => {
 };
 
 
-const todosFactory = () => ({todosIncompleted, todosCompleted, toggle, deleteTodo, add, update});
+const todosFactory = () => ({todosIncompleted, todosCompleted, toggle, deleteTodo, add});
 
 export {todosFactory};
 
